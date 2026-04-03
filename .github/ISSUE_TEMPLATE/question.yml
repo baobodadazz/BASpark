@@ -1,0 +1,65 @@
+name: 🔵 疑问与咨询 (Question)
+description: 提出关于 BASpark 使用方法或技术实现的疑问
+title: "[Question]: "
+labels: ["question"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出关于 BASpark 的任何疑问！无论是使用上的困惑，还是对实现原理的好奇，都可以在这里交流。
+
+  - type: dropdown
+    id: question-category
+    attributes:
+      label: 疑问类型
+      description: 您的问题主要关于哪方面？
+      options:
+        - 软件使用 (如何配置/开启功能)
+        - 安装与卸载 (报错/路径/自启动)
+        - 技术原理 (C#/WPF/粒子实现)
+        - 合作与授权 (开源协议/二次开发)
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-content
+    attributes:
+      label: 您想了解什么？
+      description: 请详细描述您的疑问。
+      placeholder: 例如：我想了解如何自定义粒子的消失速度，或者 XXX 的作用是什么...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: possible-bug
+    attributes:
+      label: 这是一个 Bug 吗？
+      description: 如果您发现软件行为异常，建议优先使用“Bug 反馈”模板。
+      options:
+        - 否，这只是一个纯粹的疑问
+        - 不确定，可能需要作者确认
+        - 是，但我还没准备好详细的 Bug 报告
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment-info
+    attributes:
+      label: 补充上下文 (可选)
+      description: 例如您的操作系统版本、使用的软件版本等，这有助于更准确地回答您。
+      placeholder: |
+        版本: v1.0.0
+        系统: Windows 11
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 更多说明
+      description: 如果有截图或相关代码片段，请粘贴在这里。
+    validations:
+      required: false

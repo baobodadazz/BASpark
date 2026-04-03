@@ -1,0 +1,93 @@
+name: 🔴 Bug 反馈 (Bug Report)
+description: 提交一个关于 BASpark 桌面客户端的 Bug 报告
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: checkboxes
+    id: check-list         
+    attributes:
+      label: 注意事项
+      description: 提交前请检查以下事项
+      options:
+        - label: 我已经确认这是 BASpark 的 Bug，而不是系统或其他无关软件的问题。
+        - label: 我使用的是最新版本的 BASpark。
+        - label: 我已经提供了足够的信息来重现问题。
+
+  - type: markdown
+    attributes:
+      value: |
+        感谢您反馈 Bug！为了帮助我们更快地定位问题，请详细填写以下桌面环境信息。
+
+  - type: input
+    id: app-version         
+    attributes:
+      label: BASpark 版本
+      description: 请提供您使用的 BASpark 版本号
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os-version
+    attributes:
+      label: 操作系统
+      description: 您正在运行 BASpark 的系统环境
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows 7/8 (不推荐)
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: describe-bug        
+    attributes:
+      label: 请详细描述你遇到的 Bug
+      description: 尽可能详细地描述 Bug 的现象。
+      placeholder: 例如：当我快速点击时，粒子特效出现卡顿...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps 
+    attributes:
+      label: 复现步骤
+      description: 请提供清晰的复现步骤。
+      placeholder: |
+        1. 运行 BASpark
+        2. 打开控制面板并开启 XXX 功能
+        3. 在桌面任意位置双击
+        4. 观察到 XXX 错误
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: 预期行为 vs 实际行为
+      description: 你期望发生什么？实际上发生了什么？
+      placeholder: |
+        预期：点击时产生蓝色粒子。
+        实际：点击时没有任何反应，且 CPU 占用升高。
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots         
+    attributes:
+      label: 截图或视频 (可选)
+      description: 请直接将图片或录屏拖拽到此处。
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: 其他信息
+      description: 如显卡型号、是否开启了缩放 (DPI) 等可能有影响的信息。
+      placeholder: |
+        显卡: RTX 3060
+        系统缩放: 125%
