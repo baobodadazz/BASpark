@@ -17,7 +17,8 @@ namespace BASpark
         private const int GWL_EXSTYLE = -20;
         private const int WS_EX_TRANSPARENT = 0x00000020;
         private const int WS_EX_LAYERED = 0x00080000;
-
+        private const int WS_EX_TOOLWINDOW = 0x00000080; 
+        
         private IKeyboardMouseEvents? _globalHook;
         private IntPtr _hwnd;
 
@@ -40,7 +41,7 @@ namespace BASpark
             base.OnSourceInitialized(e);
             _hwnd = new WindowInteropHelper(this).Handle;
             int style = GetWindowLong(_hwnd, GWL_EXSTYLE);
-            SetWindowLong(_hwnd, GWL_EXSTYLE, style | WS_EX_TRANSPARENT | WS_EX_LAYERED);
+            SetWindowLong(_hwnd, GWL_EXSTYLE, style | WS_EX_TRANSPARENT | WS_EX_LAYERED | WS_EX_TOOLWINDOW);
 
             this.Left = SystemParameters.VirtualScreenLeft;
             this.Top = SystemParameters.VirtualScreenTop;
